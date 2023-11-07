@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ascendsite"
+version = "0.1.0"
+description = ""
+authors = ["Treasure Mayowa <treasuremayowa@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.7"
+dj-database-url = "^2.1.0"
+psycopg2-binary = "^2.9.9"
+python-decouple = "^3.8"
+whitenoise = {extras = ["brotli"], version = "^6.6.0"}
+gunicorn = "^21.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
