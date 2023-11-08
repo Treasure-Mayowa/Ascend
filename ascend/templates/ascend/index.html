@@ -1,11 +1,46 @@
-<DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    </head>
-    <body>
-        <h1>Welcome to Ascend for teacher upskilling!</h1>
-    </body>
-</htm>
+{% extends "ascend/layout.html" %}
+{% load static %}
+{% block title %}Ascend{% endblock title %}
+{% block body %}
+
+<section class="main" style="margin-top: 130px;">
+    <div class="right">
+        <img src="{% static "ascend/Teachers.png" %}" height: />
+        
+    </div>
+    <div class="left">
+        <h2>Empowering Teachers</h2>
+        <p style="font-size: x-large; line-height: 1.5;">Ascend equips teachers with the 
+            knowledge and skills needed to improve 
+            learning outcomes, helping them 
+            ascend in their careers.</p>
+        <a href=""><button class="button">Get Started</button></a>
+        <a href="">Log In</a>
+    </div>
+</section>
+<section class="main green">
+    <div class="activities">
+        <a href="">
+            <div class="features">
+                <i class='bx bxs-book-open bx-lg'></i>
+                <h3>Teacher Training</h3>
+                <p>Access curated contents on improving your skill.</p>
+            </div>
+        </a>
+        <a href="">
+            <div class="features">
+                <i class='bx bxs-book-open bx-lg'></i>
+                <h3>Teacher Training</h3>
+                <p>Access curated contents on improving your skill.</p>
+            </div>
+        </a>
+        <a href="" class="color: #fff;">
+            <div class="features">
+                <i class='bx bxs-book-open bx-lg'></i>
+                <h3>Teacher Training</h3>
+                <p>Access curated contents on improving your skill.</p>
+            </div>
+        </a>
+    </div>
+</section>
+{% endblock body %}
