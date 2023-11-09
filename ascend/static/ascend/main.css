@@ -17,10 +17,24 @@
     .left p {
         font-size: x-large !important;
     }
+    nav.responsive a.icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .thumbnail {
+        width: 99%;
+    }
 }
 
 body {
     margin: 0;
+    width: 99%;
 }
 
 * {
@@ -63,19 +77,20 @@ nav a {
     display: flex;
 }
 
-nav .button {
+.button {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    background-color: #3EB489;
+    background-color: #FFFF00;
     border: none;
-    color: white;
+    color: #000;
     padding: 8px;
     padding-left: 18px;
     padding-right: 18px;
     border-radius: 18px;   
     font-size: large;
+    cursor: pointer;
 }
 
-nav .button:hover {
+.button:hover {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
@@ -85,7 +100,15 @@ nav .button:hover {
     content: "";
     clear: both;
     display: table;
-    width: 99%;
+    width: 98%;
+}
+
+.main.featured {
+    text-align: center;
+}
+
+.main.featured h3 {
+    font-size: x-large;
 }
 .green {
     background-color: #3EB489;
@@ -95,7 +118,7 @@ nav .button:hover {
 .left {
     float: left;
     margin-left: 2%;
-    width: 35%;
+    width: 34%;
 }
 
 .right {
@@ -109,7 +132,7 @@ nav .button:hover {
     border-radius: 25px;
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    flex: 0 0 calc(30% - 10px); 
+    flex: 0 0 calc(33.333333% - 10px); 
     margin: 5px;
     background-color: yellow;
 }
@@ -117,8 +140,62 @@ nav .button:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
+.features a {
+    color: rgb(16, 0, 16);
+}
+
 .activities {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Adjust as needed */
+    justify-content: space-between;
+    width: 99%; 
+}
+footer {
+    margin-top: 50px;
+    bottom: 0;
+}
+
+.thumbnail {
+    width: 70%;
+    margin: auto;
+    height: auto;
+    box-shadow: rgba(155, 165, 181, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.form {
+    margin: auto;
+    width: 60%;
+    padding: 5% 0%;
+    margin-bottom: 130px;
+}
+
+.form input {
+    display: block;
+    width: 99%;
+    border-radius: 6px;
+    padding: 8px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    border: 1px solid #000;
+    font-size: large;
+}
+.form h2, .form p {
+    text-align: center;
+}
+.form button {
+    background-color: #FFFF00;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border: none;
+    color: #000;
+    padding: 10px;
+    padding-left: 22px;
+    padding-right: 22px;
+    width: 99%;
+    border-radius: 8px;   
+    font-size: large;
+}
+.form input:active {
+    border: 1px solid #3EB489;
+}
+.top {
+    margin-top: 130px;
 }
