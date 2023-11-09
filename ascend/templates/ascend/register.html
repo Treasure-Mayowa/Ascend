@@ -1,0 +1,29 @@
+{% extends "ascend/layout.html" %}
+{% block title %}Register - Ascend{% endblock title %}
+{% block body %}
+{% if user.is_authenticated %}
+<p>You are currently logged in to Ascend.</p>
+{% else %}
+<div class="form top">
+    {% if message %}
+        <p style="color: red;">{{ message }}</p>
+    {% endif %}
+    <h2>Register</h2>
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <input type="text" required name="username" placeholder="Username*" />
+        <br>
+        <input type="email" required name="email" placeholder="Email*">
+        <br>
+        <input type="text" name="school" placeholder="School name" />
+        <br>
+        <input type="password" required name="password" placeholder="Password*">
+        <br>
+        <input type="password" required name="confirmation" placeholder="Confirm password*">
+        <br>
+        <button type="submit" class="form-button">Register</button>
+    </form>
+    <p>Already registered? <a href="{% url 'login' %}">Log In</a></p>
+</div>
+{% endif %}
+{% endblock body %}
