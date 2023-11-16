@@ -1,0 +1,26 @@
+{% extends "ascend/layout.html" %}
+{% load static %}
+{% block title %}Lesson Planner - Ascend{% endblock title %}
+{% block body %}
+<div class="form tool">
+    <div class="tool">
+        <h2>Lesson Planner</h2>
+        <p>Plan your next lesson seamlessly</p>
+        <form id="planner-form">
+            <input id="subject" type="text" required  placeholder="Subject"/>
+            <br>
+            <input id="topic" type="text" required  placeholder="Topic"/>
+            <br>
+            <input id="sub-topic" type="text" required placeholder="Sub Topic"/>
+            <br>
+            <input id="duration" type="number" required placeholder="Lesson Duration (in minutes)" />
+            <br>
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+    <br>
+    <div id="result">
+    </div>
+</div>
+<script src="{% static "ascend/planner.js" %}"></script>
+{% endblock body %}

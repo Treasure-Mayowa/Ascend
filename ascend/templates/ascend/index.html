@@ -2,8 +2,28 @@
 {% load static %}
 {% block title %}Ascend{% endblock title %}
 {% block body %}
-
-<section class="main top">
+{% if user.is_authenticated %}
+<section class="main">
+    <div style="text-align: center;">
+        <h3>Hello {{ user.username }}!</h3>
+        <p>Welcome to Ascend. Here, you can begin exploring the ways Ascend is designed to help you improve.</p>
+    </div>
+    <div class="activities">
+        <div class="features hub">
+            <i class='bx bxs-video bx-lg'></i>
+            <h3>Courses</h3>
+        </div>
+        <div class="features hub">
+            <i class='bx bxs-receipt bx-lg'></i>
+            <h3>Resources</h3>
+        </div>
+        <div class="features hub">
+            <i class='bx bxs-pen bx-lg'></i>
+            <h3>Tools</h3>
+        </div>
+</section>
+{% else %}
+<section class="main">
     <div class="right">
         <img src="{% static "ascend/Teachers.png" %}" />
     </div>
@@ -19,21 +39,21 @@
 </section>
 <section class="main green">
     <div class="activities">
-        <a href="">
+        <a href="#">
             <div class="features">
                 <i class='bx bxs-book-open bx-lg'></i>
                 <h3>Teacher Training</h3>
                 <p>Elevate your teaching with curated content.</p>
             </div>
         </a>
-        <a href="">
+        <a href="#">
             <div class="features">
                 <i class='bx bxs-receipt bx-lg'></i>
                 <h3>Resources</h3>
                 <p>Access resources to boost your skills.</p>
             </div>
         </a>
-        <a href="" class="color: #fff;">
+        <a href="#" class="color: #fff;">
             <div class="features">
                 <i class='bx bxs-pen bx-lg'></i>
                 <h3>Tools</h3>
@@ -48,4 +68,5 @@
     <h4>Using Artificial Intelligence in Teaching</h4>
     <em>Certificate included</h4>
 </section>
+{% endif %}
 {% endblock body %}

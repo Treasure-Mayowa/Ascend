@@ -1,0 +1,30 @@
+{% extends "ascend/layout.html" %}
+{% block title %}Resources - Ascend{% endblock title %}
+{% block body %}
+<section class="bottom">
+    <h2 style="text-align: center;">Resources</h2>
+    {% if user.is_authenticated %}
+    <form class="form">
+        <input type="text" required  />
+    </form>
+    <div class="activities" style="width: auto;">
+        {% if videos %}
+            {% for video in videos %}
+                <div class="features resources">
+                    {{ video.embed_code| safe }}
+                    <h4 style="color: #3EB489;">{{ video.title }}</h4>
+                    <em>{{ video.source }}</em>
+                    <br>
+                    <button> {{video.category}} </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    {% else %}
+    <div>
+        <i class='bx bx-lock-alt bx-lg'></i>
+        <h3><em>You need to be logged in to access resources</em></h3>
+    </div>
+    {% endif %}
+</section>
+{% endblock body %}

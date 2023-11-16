@@ -7,6 +7,10 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
             <link rel="stylesheet" href="{% static 'ascend/main.css' %}">
+            <link rel="apple-touch-icon" sizes="180x180" href="{% static 'ascend/apple-touch-icon.png' %}">
+            <link rel="icon" type="image/png" sizes="32x32" href="{% static 'ascend/favicon-32x32.png' %}">
+            <link rel="icon" type="image/png" sizes="16x16" href="{% static 'ascend/favicon-16x16.png' %}">
+            <link rel="manifest" href="{% static 'ascend/site.webmanifest' %}">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
@@ -22,12 +26,12 @@
                     <img src="{% static "ascend/Ascend.png" %}" alt="Ascend Logo" height="80"/>
                 </a>
                 <div>
-                    <a href="">About</a>
-                    <a href="">Courses</a>
-                    <a href="">Resources</a>
-                    <a href="">Tools</a>
+                    <a href="{% url "about" %}">About</a>
+                    <a href="{% url "courses" %}">Courses</a>
+                    <a href="{% url "resources" %}">Resources</a>
+                    <a href="{% url "tools" %}">Tools</a>
                     {% if user.is_authenticated %}
-                        <a href="{% url "logout" %}"><button class="button">logout</button></a>
+                        <a href="{% url "logout" %}"><button class="button">Logout</button></a>
                     {% else %}
                         <a href="{% url "login" %}">Log In</a>
                         <a href="{% url "register" %}"><button class="button">Get Started</button></a>
@@ -39,8 +43,14 @@
         <footer class="main green">
             <img src="{% static "ascend/Ascend.png" %}" alt="Ascend Logo" height="80"/>
             <div class="right">
-                <em>Created by <a href="https://linkedin.com/in/treasure-mayowa">Treasure Mayowa</a></em>
+                <em>Created by <a href="https://linkedin.com/in/treasure-mayowa" target=”_blank”>Treasure Mayowa</a></em>
                 <p style="font-size: large;">Ascend is a web application designed to equip teachers with the knowledge and tools needed to improve learning outcomes and their teaching.</p>
+                <h4>Contact</h4>
+                <a href="mailto:ascend0@hotmail.com" target=”_blank”>ascend0@hotmail.com</a>
             </div>
+            <br>
+            <hr>
+            <br>
+            <p>© Copyright Ascend | All rights reserved 2023</p>
         </footer>
     </html>

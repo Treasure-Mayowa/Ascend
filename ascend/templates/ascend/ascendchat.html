@@ -1,0 +1,26 @@
+{% extends "ascend/layout.html" %}
+{% load static %}
+{% block title %}Ascend Chat - Ascend{% endblock title %}
+{% block body %}
+<div class="chatbot-container">
+    <div id="header">
+        <h3>Ascend Chat</h3>
+    </div>
+    <div id="chatbot">
+        <div id="conversation">
+        </div>
+        <form id="input-form">
+          <message-container>
+            <input id="input-field" type="text" required placeholder="Type your message here">
+            <button id="submit-button" type="submit">
+              <i class='bx bxs-send bx-sm'></i>
+            </button>
+          </message-container>
+        </form>
+    </div>
+    <div>
+    </div>
+    <em style='text-align: center;'>Ascend Chat may provide inaccurate information or forget previous conversation in a chat, make sure to confirm facts</em>  
+</div>
+<script src="{% static "ascend/chat.js" %}"></script>
+{% endblock body %}

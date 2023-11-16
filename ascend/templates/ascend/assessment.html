@@ -1,0 +1,23 @@
+{% extends "ascend/layout.html" %}
+{% load static %}
+{% block title %}Assessment Generator - Ascend{% endblock title %}
+{% block body %}
+<script src="{% static "ascend/assessment.js" %}"></script>
+<div class="form">
+    <div class="tool">
+        <h2>Assessment Generator</h2>
+        <p>Enter in notes or the topic you want to generate questions for.</p>
+        <form id="assessment-form">
+            <textarea name="content" rows="15" maxlength="950" id="content" required></textarea>
+            <br>
+            <input type="number" min="5" max="50" name="number" required id="number" placeholder="Number of questions"/>
+            <br>
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+    <br>
+    <div id="result tool">
+    </div>
+</div>
+
+{% endblock body %}

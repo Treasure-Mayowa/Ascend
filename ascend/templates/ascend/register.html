@@ -2,9 +2,11 @@
 {% block title %}Register - Ascend{% endblock title %}
 {% block body %}
 {% if user.is_authenticated %}
-<p>You are currently logged in to Ascend.</p>
+<div class=" ">
+    <p>You are currently logged in to Ascend.</p>
+</div>
 {% else %}
-<div class="form top">
+<div class="form  ">
     {% if message %}
         <p style="color: red;">{{ message }}</p>
     {% endif %}
