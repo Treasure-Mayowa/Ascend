@@ -49,6 +49,11 @@
         float: none !important;
         flex: none !important;
     }
+    .courses {
+      margin: auto;
+      width: 90% !important;
+      padding: 10px !important;
+    }
     .courses img {
         width: 100% !important;
         float: none !important;
