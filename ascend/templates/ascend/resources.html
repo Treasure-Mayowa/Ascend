@@ -2,24 +2,45 @@
 {% block title %}Resources - Ascend{% endblock title %}
 {% block body %}
 <section class="bottom">
-    <h2 style="text-align: center;">Resources</h2>
+    <div style="text-align: center;">
+        <h2 >Resources</h2>
+        <p>Curated resources from the internet to help you upskill</p>
+    </div>
     {% if user.is_authenticated %}
-    <form class="form">
-        <input type="text" required  />
+    <form class="form search" method="get" action="{% url "resources" %}">
+        <input type="text" required name="search" value="{{ search }}"/>
     </form>
+    <br>
     <div class="activities" style="width: auto;">
         {% if videos %}
             {% for video in videos %}
-                <div class="features resources">
+                <div class="features resources video">
                     {{ video.embed_code| safe }}
                     <h4 style="color: #3EB489;">{{ video.title }}</h4>
                     <em>{{ video.source }}</em>
                     <br>
-                    <button> {{video.category}} </button>
+                    <a href="{% url "resources" %}?category={{ video.category }}"><button> {{video.category}} </button></a>
                 </div>
+            {% endfor %}
+        {% else %}
+        <h4 style="color: red;">No videos</h4>
+        {% endif %}
+    </div>
+    <br>
+    <h3 style="text-align: center;">Links</h3>
+    <br>
+    <div class="activities" style="width: auto;">
+        {% if resources %}
+            {% for resource in resources %}
+                <a class="features resources video url" href="{{ resource.url | safe}}" target=”_blank”>
+                    <img src="{{ resource.image_url| safe }}" alt="{{ resource.name }}" />
+                    <h4 style="color: #3EB489;">{{ resource.name }}</h4>
+                    <em>{{ resource.description }}</em>
+                </a>
             {% endfor %}
         {% endif %}
     </div>
+
     {% else %}
     <div>
         <i class='bx bx-lock-alt bx-lg'></i>

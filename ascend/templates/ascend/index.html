@@ -9,18 +9,18 @@
         <p>Welcome to Ascend. Here, you can begin exploring the ways Ascend is designed to help you improve.</p>
     </div>
     <div class="activities">
-        <div class="features hub">
+        <a class="features hub" href="{% url "courses" %}">
             <i class='bx bxs-video bx-lg'></i>
             <h3>Courses</h3>
-        </div>
-        <div class="features hub">
+        </a>
+        <a class="features hub" href="{% url "resources" %}">
             <i class='bx bxs-receipt bx-lg'></i>
             <h3>Resources</h3>
-        </div>
-        <div class="features hub">
+        </a>
+        <a class="features hub" href="{% url "tools" %}">
             <i class='bx bxs-pen bx-lg'></i>
             <h3>Tools</h3>
-        </div>
+        </a>
 </section>
 {% else %}
 <section class="main">
