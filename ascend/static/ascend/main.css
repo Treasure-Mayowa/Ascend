@@ -49,6 +49,10 @@
         float: none !important;
         flex: none !important;
     }
+    .features.resources.video {
+      padding: 10px !important;
+      width: 90% !important;
+    }
     .courses {
       margin: auto;
       width: 90% !important;
@@ -178,12 +182,20 @@ nav a {
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   flex: 0 0 calc(30% - 10px); 
 }
+.features.resources.url {
+  border: none
+}
+
 .resources iframe {
-  width: 100%;
+  width: 100% !important;
   aspect-ratio: 16/9;
   border-radius: 15px;
 }
-
+.resources img {
+  width: 100% !important;
+  aspect-ratio: 16/9;
+  border-radius: 15px;
+}
 .resources button {
   background-color: #800080;
   color: white;
@@ -253,6 +265,11 @@ footer {
     width: 60%;
     padding: 5% 0%;
     margin-bottom: 130px;
+}
+
+.form.search {
+  padding: 10px; 
+  margin-bottom: 0px;
 }
 
 .form input {

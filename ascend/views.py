@@ -27,9 +27,27 @@ def courses(request):
 def tools(request):
     return render(request, "ascend/tools.html")
 
-def resources(request):    
+def resources(request):
+    search_term = request.GET.get('search', '')
+    category = request.GET.get('category', '')
+    
+
+    if search_term:
+        videos = YoutubeContent.objects.filter(title__icontains=search_term)
+        resources = Resources.objects.filter(name__icontains=search_term)
+    
+    elif category:
+        videos = YoutubeContent.objects.filter(category=category)
+        resources = ''
+
+    else: 
+        videos =  YoutubeContent.objects.all()
+        resources = Resources.objects.all()
+
     return render(request, "ascend/resources.html", {
-        "videos": YoutubeContent.objects.all()
+        "search": search_term,
+        "videos": videos,
+        "resources": resources
     })
 
 @login_required
@@ -224,21 +242,21 @@ def planner_api(request):
         "Content-Type": "application/json"
     }
     data = {
-        "temperature": 0.7,
         "messages": [
-        {
-           "role": "system",
-                    "content": "You are an Ascend lesson planner AI designed to generate lesson plans for Nigerian teachers"
-        },
-        {
-            "role": "user",
-            "content": f"Generate a lesson plan following the Nigerian curriculum with the the topic, {topic}, sub-topic, {sub}, lesson duration of {duration} minutes under the subject, {subject}. If there is an invalid topic, sub-topic, or subject, just respond 'Invalid input. Try again.' Format your response well and DO NOT put any preface text in your response, just the lesson plan. Also, put 'Key Point' outline in the lessons plan to highlight key points in the subtopic alongside other default outlines."
-        }
+            { 
+                "role": "system", 
+                "content": "You are an Ascend lesson planner AI designed to generate lesson plans for Nigerian teachers" 
+            },
+            { 
+                "role": "user", 
+                "content":  f"Generate a lesson plan following the Nigerian curriculum with the the topic, {topic}, sub-topic, {sub}, lesson duration of {duration} minutes under the subject, {subject}. If there is an invalid topic, sub-topic, or subject, just respond 'Invalid input. Try again.' Format your response well and DO NOT put any preface text in your response, just the lesson plan. Also, put 'Key Point' outline in the lessons plan to highlight key points in the subtopic alongside other default outlines."
+            }
         ],
         "model": "llama-2-chat-70b-4k",
         "stream": stream,
+        "temperature": 0.7,
         "max_tokens": 1000
-        }
+    }
     response = requests.post(url, headers=headers, json=data)
     if stream:
         for line in response.iter_lines():
