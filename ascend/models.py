@@ -21,3 +21,10 @@ class YoutubeContent(models.Model):
     embed_code = models.TextField()
     source = models.TextField()
     category = models.TextField(choices=CATEGORY_CHOICES, null=True)
+
+class Resources(models.Model):
+    image_url = models.URLField()
+    name = models.TextField()
+    description = models.TextField()
+    url = models.URLField()
+    
