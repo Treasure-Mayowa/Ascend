@@ -1,0 +1,49 @@
+{% extends "ascend/layout.html" %}
+{% load static %}
+{% block title %}Pedagogy Guide - Ascend{% endblock title %}
+{% block body %}
+<div class="form tool">
+    <div class="tool">
+        <h2>Pedagogy Guide</h2>
+        <p>Get actionable guides for implementing various pedagogy strategies in your classroom</p>
+        <form id="pedagogy-form">
+            <input id="subject" type="text" required  placeholder="Subject"/>
+            <br>
+            <input id="topic" type="text" required  placeholder="Topic"/>
+            <br>
+            <label for="class">Choose a class:</label>
+            <select id="class" name="class">
+                <option value="primary1">Primary 1</option>
+                <option value="primary2">Primary 2</option>
+                <option value="primary3">Primary 3</option>
+                <option value="primary4">Primary 4</option>
+                <option value="primary5">Primary 5</option>
+                <option value="primary6">Primary 6</option>
+                <option value="js1">Junior Secondary 1 (JS1)</option>
+                <option value="js2">Junior Secondary 2 (JS2)</option>
+                <option value="js3">Junior Secondary 3 (JS3)</option>
+                <option value="ss1">Senior Secondary 1 (SS1)</option>
+                <option value="ss2">Senior Secondary 2 (SS2)</option>
+                <option value="ss3">Senior Secondary 3 (SS3)</option>
+                <option value="university">University</option>
+            </select>
+            <br>
+            <label for="pedagogy">Select a pedagogy strategy:</label>
+            <select name="pedagogy" id="pedagogy" required>
+                <option value="project-based learning">Project-Based Learning</option>
+                <option value="student-led inquiry">Student Led Inquiry</option>
+                <option value="socratic method">Socratic Method</option>
+                <option value="integrative learning">Integrative Learning</option>
+                <option value="problem-based learning">Problem-based Learning</option>
+                <option value="collaborative learning">Collaborative Learning</option>
+                <option value="gamification">Gamified Learning</option>
+            </select>
+            <button type="submit">Create</button>
+        </form>
+    </div>
+    <br>
+    <div id="result">
+    </div>
+</div>
+<script src="{% static "ascend/pedagogy.js" %}"></script>
+{% endblock body %}

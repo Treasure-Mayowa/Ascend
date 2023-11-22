@@ -6,6 +6,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+            <link href="https://ascendweb.xyz/" rel="canonical">
             <link rel="stylesheet" href="{% static 'ascend/main.css' %}">
             <link rel="apple-touch-icon" sizes="180x180" href="{% static 'ascend/apple-touch-icon.png' %}">
             <link rel="icon" type="image/png" sizes="32x32" href="{% static 'ascend/favicon-32x32.png' %}">
@@ -17,6 +18,7 @@
             <script src="{% static "ascend/app.js" %}"></script>
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-83TH7KP85B"></script>
             <title>{% block title %}{% endblock title %}</title>
+            <meta name="description" content="{% block description %}Ascend is a web application designed designed to equip teachers with the knowledge and tools needed to improve their teaching and learning outcomes.{% endblock description %}">
         </head>
         <body>
             <nav id="nav">
@@ -24,7 +26,8 @@
                     <i class='bx bx-menu bx-lg'></i>
                 </a>
                 <a class="logo" href="{% url "home" %}">
-                    <img src="{% static "ascend/Ascend.png" %}" alt="Ascend Logo" height="80"/>
+                    <img src="{% static "ascend/Ascend.webp" %}" alt="Ascend Logo" height="80"/>
+                    <h1 style="display: none;">Ascend</h1>
                 </a>
                 <div>
                     <a href="{% url "about" %}">About</a>
@@ -42,7 +45,7 @@
             {% block body %}{% endblock body %}
         </body>
         <footer class="main green">
-            <img src="{% static "ascend/Ascend.png" %}" alt="Ascend Logo" height="80"/>
+            <img src="{% static "ascend/Ascend.webp" %}" alt="Ascend Logo" height="80"/>
             <div class="right">
                 <em>Created by <a href="https://linkedin.com/in/treasure-mayowa" target=”_blank”>Treasure Mayowa</a></em>
                 <p style="font-size: large;">Ascend is a web application designed to equip teachers with the knowledge and tools needed to improve learning outcomes and their teaching.</p>

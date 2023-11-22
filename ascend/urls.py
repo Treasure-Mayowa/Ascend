@@ -14,10 +14,12 @@ urlpatterns = [
     path('tool/assessment-generator', views.assessment, name="assessment"),
     path('tool/lesson-planner', views.planner, name="planner"),
     path('tool/ascendchat', views.ascendchat, name="ascendchat"),
+    path('tool/pedagogy-guide', views.pedagogy, name="pedagogy"),
 
 
     # API Routes
     path('api/ascendchat/<str:message>', views.ascend_chat),
     path('api/assessment', views.assessment_api),
-    path('api/planner', views.planner_api)
+    path('api/planner', views.planner_api),
+    path('api/pedagogy-guide', views.pedagogy_api),
 ]
