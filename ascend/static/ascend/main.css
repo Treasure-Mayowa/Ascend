@@ -272,7 +272,7 @@ footer {
   margin-bottom: 0px;
 }
 
-.form input {
+.form input, .form select {
     display: block;
     width: 99%;
     border-radius: 6px;
@@ -511,7 +511,7 @@ footer {
     width: 50%;
 }
 
-.card:hover {
+.card:hover, .card:hover i {
     background-color: #800080;
     color: #fff;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
