@@ -1,6 +1,7 @@
 {% extends "ascend/layout.html" %}
 {% load static %}
-{% block title %}Ascend{% endblock title %}
+{% block description %}Ascend is a web application designed designed to equip teachers with the knowledge and tools needed to improve their teaching and learning outcomes.{% endblock description %} 
+{% block title %}Ascend: Elevate Teaching Excellence. Transform Learning Futures.{% endblock title %}
 {% block body %}
 {% if user.is_authenticated %}
 <section class="main">
@@ -25,7 +26,7 @@
 {% else %}
 <section class="main">
     <div class="right">
-        <img src="{% static "ascend/Teachers.png" %}" />
+        <img src="{% static "ascend/Teachers.webp" %}" alt="Image of a teacher teaching class" />
     </div>
     <div class="left">
         <h2>Empowering Teachers</h2>
@@ -64,7 +65,7 @@
 </section>
 <section class="main featured">
     <h3>Featured Course</h3>
-    <img src="{% static "ascend/ai-course-thumbnail.png" %}" alt="Ascend Logo" class="thumbnail" />
+    <img src="{% static "ascend/ai-course-thumbnail.webp" %}" alt="Ascend Logo" class="thumbnail" />
     <h4>Using Artificial Intelligence in Teaching</h4>
     <em>Certificate included</h4>
 </section>

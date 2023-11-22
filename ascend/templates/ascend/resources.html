@@ -1,15 +1,19 @@
 {% extends "ascend/layout.html" %}
+{% load static %}
 {% block title %}Resources - Ascend{% endblock title %}
 {% block body %}
 <section class="bottom">
     <div style="text-align: center;">
-        <h2 >Resources</h2>
+        <h2>Resources</h2>
         <p>Curated resources from the internet to help you upskill</p>
     </div>
     {% if user.is_authenticated %}
     <form class="form search" method="get" action="{% url "resources" %}">
-        <input type="text" required name="search" value="{{ search }}"/>
+        <input type="text" required name="search" value="{{ search }}" placeholder="Search"/>
     </form>
+    <div style="margin: auto; width: 50%;" >
+        <button class="button" id="links-button">Links</button>
+    </div>
     <br>
     <div class="activities" style="width: auto;">
         {% if videos %}
@@ -27,9 +31,9 @@
         {% endif %}
     </div>
     <br>
-    <h3 style="text-align: center;">Links</h3>
+    <h3 style="text-align: center; font-size: x-large;">Links</h3>
     <br>
-    <div class="activities" style="width: auto;">
+    <div class="activities" style="width: auto;" id="links">
         {% if resources %}
             {% for resource in resources %}
                 <a class="features resources video url" href="{{ resource.url | safe}}" target=”_blank”>
@@ -48,4 +52,5 @@
     </div>
     {% endif %}
 </section>
+<script src="{% static "ascend/resources.js" %}"></script>
 {% endblock body %}
