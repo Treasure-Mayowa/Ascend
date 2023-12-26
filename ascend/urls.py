@@ -15,6 +15,7 @@ urlpatterns = [
     path('tool/lesson-planner', views.planner, name="planner"),
     path('tool/ascendchat', views.ascendchat, name="ascendchat"),
     path('tool/pedagogy-guide', views.pedagogy, name="pedagogy"),
+    path('feedback', views.feedback, name="feedback"),
 
 
     # API Routes

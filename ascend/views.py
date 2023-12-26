@@ -9,7 +9,6 @@ from .models import *
 import json
 import requests
 
-
 MESSAGE = []
 
 ASSISTANT = []
@@ -29,6 +28,9 @@ def tools(request):
 
 def pedagogy(request):
     return render(request, "ascend/pedagogyguide.html")
+
+def feedback(request):
+    return render(request, "ascend/feedback.html")
 
 def resources(request):
     search_term = request.GET.get('search', '')
@@ -154,9 +156,9 @@ def ascend_chat(request, message):
     data = {
         "temperature": 0.7,
         "messages": [
-             {
+            {
                 "role": "system",
-                 "content": "You are Ascend Chat, a chatbot designed to assist Nigerian teachers. You are from a web application called Ascend that has courses, teacher upskilling resources and tools all designed to help teachers improve and improve learning outcomes."
+                "content": "You are Ascend Chat, a chatbot designed to assist Nigerian teachers. You are from a web application called Ascend that has courses, teacher upskilling resources and tools all designed to help teachers improve and improve learning outcomes."
             }
             ] + MESSAGE + ASSISTANT + [
                 {
