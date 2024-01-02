@@ -1,8 +1,20 @@
 {% extends "ascend/layout.html" %}
+{% load static %}
 {% block title %}About - Ascend{% endblock title %}
 {% block body %}
+<section class="main" style="text-align: center; padding-top: 20px; margin: auto; width: 50%;">
+    <h3 style="font-size: xx-large;">Ascend helps you to elevate in your teaching profession</h3>
+    <em>By offering you an all-in-one application, Ascend empowers to acheive more</em>
+</section>
 <section class="main bottom">
-    <h2>About Ascend</h2>
-    <p>Ascend is web application designed to equip teachers with the knowledge and tools needed to improve learning outcomes and their teaching delivery. With Ascend, teachers get access to current content, including an 'AI for teachers' course on improving themselves.</p>
+    <div class="right">
+        <img src="{% static "ascend/nigerian-teacher.webp" %}" alt="Image of a teacher teaching class" />
+    </div>
+    <div class="left">
+        <h2>About Ascend</h2>
+        <p style="font-size: larger; line-height: 1.5;">Ascend is a platform designed to equip Nigerian teachers with the knowledge and tools needed to improve learning outcomes and their teaching delivery. With Ascend, teachers get access to courses, training and teaching resources and AI-powered tools on improving themselves.</p>
+        <br>
+        <p></p>
+    </div>
 </section>
 {% endblock body %}

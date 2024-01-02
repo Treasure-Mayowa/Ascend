@@ -12,9 +12,10 @@
         <input type="text" required name="search" value="{{ search }}" placeholder="Search"/>
     </form>
     <div style="margin: auto; width: 50%;" >
-        <button class="button" id="links-button">Links</button>
+        Navigate to: <button class="button" id="links-button">Links</button>
     </div>
     <br>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <div class="activities" style="width: auto;">
         {% if videos %}
             {% for video in videos %}
