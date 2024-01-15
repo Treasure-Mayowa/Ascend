@@ -7,32 +7,36 @@
     <p style="text-align: center;">A collection of tools to enable you to improve your teaching workflow</p>
     {% if user.is_authenticated %}
     <div class="activities" style="margin: auto; width: 70%;">
-        <div class="card">
-            <a href="{% url "assessment" %}"><i class='bx bx-right-top-arrow-circle bx-sm'></i></a>
-            <br>
-            <h3>Assessment Generator</h3>
-            <p>Generate quizzes in just a click</p>   
-        </div>
+        <a href="{% url "assessment" %}">
+            <div class="card">
+                <i class='bx bx-right-top-arrow-circle bx-sm'></i>
+                <br>
+                <h3>Assessment Generator</h3>
+                <p>Generate quizzes in just a click</p>   
+            </div>
+        </a>
         <a href="{% url "planner" %}">
             <div class="card">
-                <a href="{% url "planner" %}"><i class='bx bx-right-top-arrow-circle bx-sm'></i></a>
+                <i class='bx bx-right-top-arrow-circle bx-sm'></i>
                 <br>
                 <h3>Lesson Planner</h3>
                 <p>Plan your lessons in few seconds</p>
             </div>
         </a>
+        <a href="{% url "pedagogy" %}">
         <div class="card">
-            <a href="{% url "pedagogy" %}"><i class='bx bx-right-top-arrow-circle bx-sm'></i></a>
+            <i class='bx bx-right-top-arrow-circle bx-sm'></i>
             <br>
             <h3>Pedagogy Guide</h3>
             <p>Create teaching guides seamlessly</p>
-        </div>
+        </div></a>
+        <a href="{% url "ascendchat" %}">
         <div class="card">
-            <a href="{% url "ascendchat" %}"><i class='bx bx-right-top-arrow-circle bx-sm'></i></a>
+            <i class='bx bx-right-top-arrow-circle bx-sm'></i>
             <br>
             <h3>Ascend Chat</h3>
             <p>Chat with our AI chatbot, Ascend Chat</p>
-        </div>
+        </div></a>
         <div class="card" style="background-color: grey;">
             <br>
             <h3>Auto Grader</h3>
