@@ -7,46 +7,34 @@
     <p style="text-align: center;">A collection of tools to enable you to improve your teaching workflow</p>
     {% if user.is_authenticated %}
     <div class="activities" style="margin: auto; width: 70%;">
-        <a href="{% url "assessment" %}">
-            <div class="card">
-                <i class='bx bx-right-top-arrow-circle bx-sm'></i>
-                <br>
-                <h3>Assessment Generator</h3>
-                <p>Generate quizzes in just a click</p>   
-            </div>
+        <a href="{% url "assessment" %}" class="card">
+            <i class='bx bx-right-top-arrow-circle bx-sm'></i>
+            <br>
+            <h3>Assessment Generator</h3>
+            <p>Generate quizzes in just a click</p>   
         </a>
-        <a href="{% url "planner" %}">
-            <div class="card">
-                <i class='bx bx-right-top-arrow-circle bx-sm'></i>
-                <br>
-                <h3>Lesson Planner</h3>
-                <p>Plan your lessons in few seconds</p>
-            </div>
+        <a href="{% url "planner" %}" class="card">
+            <i class='bx bx-right-top-arrow-circle bx-sm'></i>
+            <br>
+            <h3>Lesson Planner</h3>
+            <p>Plan your lessons in few seconds</p>
         </a>
-        <a href="{% url "pedagogy" %}">
-        <div class="card">
+        <a href="{% url "pedagogy" %}" class="card">
             <i class='bx bx-right-top-arrow-circle bx-sm'></i>
             <br>
             <h3>Pedagogy Guide</h3>
             <p>Create teaching guides seamlessly</p>
-        </div></a>
-        <a href="{% url "ascendchat" %}">
-        <div class="card">
+        </a>
+        <a href="{% url "ascendchat" %}" class="card">
             <i class='bx bx-right-top-arrow-circle bx-sm'></i>
             <br>
             <h3>Ascend Chat</h3>
             <p>Chat with our AI chatbot, Ascend Chat</p>
-        </div></a>
+        </a>
         <div class="card" style="background-color: grey;">
             <br>
             <h3>Auto Grader</h3>
             <p>Easily grade assignments and exams solutions.</p><em>Coming soon</em>
-        </div>
-        <div class="card" style="background-color: #5271FF;">
-            <a href="https://bloom-x6o3.onrender.com/" target=”_blank”><i class='bx bx-right-top-arrow-circle bx-sm'></i></a>
-            <br>
-            <h3>Bloom</h3>
-            <p>Ensure your mental wellness with Bloom. <em>*External tool*</em></p>
         </div>
     </div>
     {% else %}
