@@ -139,7 +139,7 @@ def ascend_chat(request, message):
 
     stream = False
 
-    url = "https://chat.nbox.ai/api/chat/completions"
+    url = "https://chat.tune.app/api/chat/completions"
     headers = {
         "Authorization": api_key,
         "Content-Type": "application/json"
@@ -163,10 +163,10 @@ def ascend_chat(request, message):
             ] + MESSAGE + ASSISTANT + [
                 {
                     "role": "user",
-                    "content": f"Respond to this message and do not put any preface text in your response: {message}"
+                    "content": f"Respond to this message and do not put any preface text in your response and simplify for easy comprehension: {message}"
                 }
             ],
-            "model": "llama2-chat-13b-4k",
+            "model": "mixtral-8x7b-inst-v0-1-32k",
             "stream": stream,
             "max_tokens": 1000
         }
@@ -197,7 +197,7 @@ def assessment_api(request):
     number = request.GET.get('number', '')
 
 
-    url = "https://chat.nbox.ai/api/chat/completions"
+    url = "https://chat.tune.app/api/chat/completions"
     headers = {
         "Authorization": api_key,
         "Content-Type": "application/json"
@@ -214,7 +214,7 @@ def assessment_api(request):
             "content": f"Using these topics or notes, generate {number} good assessment questions. Format your response well and do not put an preface text in your response, just the assessment questions: {content}"
         }
         ],
-        "model": "llama2-chat-13b-4k",
+        "model": "mixtral-8x7b-inst-v0-1-32k",
         "stream": stream,
         "max_tokens": 1000
         }
@@ -227,7 +227,7 @@ def assessment_api(request):
                     result = json.loads(l)
                     return JsonResponse({ "result": result })
     else:
-        result = response.json()['choices'][0]['message']['content']
+        result = response.json()
         return JsonResponse({ "result": result })
 
 @login_required
@@ -241,7 +241,7 @@ def planner_api(request):
     sub = request.GET.get('sub', '')
     duration = request.GET.get('duration', '')
 
-    url = "https://chat.nbox.ai/api/chat/completions"
+    url = "https://chat.tune.app/api/chat/completions"
     headers = {
         "Authorization": api_key,
         "Content-Type": "application/json"
@@ -257,7 +257,7 @@ def planner_api(request):
                 "content":  f"Generate a lesson plan following the Nigerian curriculum with the the topic, {topic}, sub-topic, {sub}, lesson duration of {duration} minutes under the subject, {subject}. If there is an invalid topic, sub-topic, or subject, just respond 'Invalid input. Try again.' Format your response well and DO NOT put any preface text in your response, just the lesson plan. Also, put 'Key Point' outline in the lessons plan to highlight key points in the subtopic alongside other default outlines."
             }
         ],
-        "model": "llama2-chat-13b-4k",
+        "model": "mixtral-8x7b-inst-v0-1-32k",
         "stream": stream,
         "temperature": 0.7,
         "max_tokens": 1000
@@ -286,7 +286,7 @@ def pedagogy_api(request):
     subject_class = request.GET.get('class', '')
     pedagogy = request.GET.get('pedagogy', '')
 
-    url = "https://chat.nbox.ai/api/chat/completions"
+    url = "https://chat.tune.app/api/chat/completions"
     headers = {
         "Authorization": api_key,
         "Content-Type": "application/json"
@@ -302,7 +302,7 @@ def pedagogy_api(request):
                 "content":  f"Create a detailed guide for applying {pedagogy} to teach the topic {topic} under the subject {subject} for {subject_class} students"
             }
         ],
-        "model": "llama2-chat-13b-4k",
+        "model": "mixtral-8x7b-inst-v0-1-32k",
         "stream": stream,
         "temperature": 0.8,
         "max_tokens": 1000
