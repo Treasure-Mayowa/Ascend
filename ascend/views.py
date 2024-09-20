@@ -8,7 +8,7 @@ from django.conf import settings
 from .models import *
 import json
 import requests
-from api import api_pedagogy, api_planner, api_assessment
+from .api import api_pedagogy, api_planner, api_assessment
 
 MESSAGE = []
 
