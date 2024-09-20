@@ -1,3 +1,7 @@
+from django.conf import settings
+import requests
+import json
+
 API_KEY = settings.API_KEY
 
 STREAM = False

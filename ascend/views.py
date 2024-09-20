@@ -4,7 +4,6 @@ from django.db import IntegrityError
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from django.conf import settings
 from .models import *
 import json
 import requests
