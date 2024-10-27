@@ -30,10 +30,14 @@
                     <h1 style="display: none;">Ascend</h1>
                 </a>
                 <div>
-                    <a href="{% url "about" %}">About</a>
-                    <a href="{% url "courses" %}">Courses</a>
-                    <a href="{% url "resources" %}">Resources</a>
-                    <a href="{% url "tools" %}">Tools</a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url "home" %}">Dashboard</a>
+                    {% else %}
+                        <a href="{% url "about" %}">About</a>
+                    {% endif %}  
+                        <a href="{% url "courses" %}">Courses</a>
+                        <a href="{% url "resources" %}">Resources</a>
+                        <a href="{% url "tools" %}">Tools</a>
                     {% if user.is_authenticated %}                    
                         <a href="{% url "feedback" %}">Feedback</a>
                         <a href="{% url "logout" %}"><button class="button">Logout</button></a>
@@ -46,16 +50,19 @@
             {% block body %}{% endblock body %}
         </body>
         <footer class="main green">
-            <img src="{% static "ascend/Ascend.webp" %}" alt="Ascend Logo" height="80"/>
-            <div class="right">
-                <em>Created by <a href="https://linkedin.com/in/treasure-mayowa" target=”_blank”>Treasure Mayowa</a></em>
-                <p style="font-size: large;">Ascend is a web application designed to equip teachers with the knowledge and tools needed to improve their teaching and learning outcomes.</p>
-                <h4>Contact</h4>
-                <a href="mailto:ascend0@hotmail.com" target=”_blank”>ascend0@hotmail.com</a>
+            <div class='left'>
+                <img src="{% static "ascend/Ascend.webp" %}" alt="Ascend Logo" height="80"/>
+                <p style="font-size: large;">Ascend is a web application designed to equip teachers with the knowledge and tools needed to improve their teaching and learning outcomes.  <em>Created by <a href="https://linkedin.com/in/treasure-mayowa" target=”_blank”>Treasure Mayowa</a></em></p>
             </div>
-            <br>
-            <hr>
-            <br>
-            <p>© Copyright Ascend | All rights reserved 2024</p>
+            <div class="right">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="{% url 'about' %}" class="white">About</a></li>
+                    <li><a href="{% url 'feedback' %}" class="white">Feedback</a></li>
+                    <li><a href="mailto:ascend0@hotmail.com" target=”_blank” class="white">Contact Us</a></li>
+                    <li><a href="mailto:ascend0@hotmail.com" target=”_blank” class="white">Report/Request a Feature</a></li>
+                </ul>
+                <p>© Copyright Ascend, all rights reserved 2024</p>
+            </div>
         </footer>
     </html>

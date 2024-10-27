@@ -12,7 +12,7 @@
         <input type="text" required name="search" value="{{ search }}" placeholder="Search"/>
     </form>
     <div style="margin: auto; width: 50%;" >
-        Navigate to: <button class="button" id="links-button">Links</button>
+        Navigate to: <button class="button" id="links-button">Teaching Aids</button>
     </div>
     <br>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
@@ -32,7 +32,7 @@
         {% endif %}
     </div>
     <br>
-    <h3 style="text-align: center; font-size: x-large;">Links</h3>
+    <h3 style="text-align: center; font-size: x-large;">Teaching Aids</h3>
     <br>
     <div class="activities" style="width: auto;" id="links">
         {% if resources %}
@@ -47,7 +47,7 @@
     </div>
 
     {% else %}
-    <div>
+    <div style="text-align: center;">
         <i class='bx bx-lock-alt bx-lg'></i>
         <h3><em>You need to be logged in to access resources</em></h3>
     </div>

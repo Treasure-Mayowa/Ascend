@@ -2,8 +2,9 @@
 {% load static %}
 {% block title %}Courses - Ascend{% endblock title %}
 {% block body %}
-<section class="main bottom">
+<section class="main bottom" style="text-align: center;">
     <h2>Courses</h2>
+    <p>Expert-led courses tailored to elevate your teaching practice.</p>
     {% if user.is_authenticated %}
     <div class="activities">
         <div class="courses">
@@ -12,9 +13,19 @@
             <p>In this course, educators learn how to harness Artificial Intelligence (AI) for teaching</p>
             <a href="{% url "ai_course" %}"><button class='button'>View</button></a>
         </div>
-    </div>
+    {% if courses %}
+        {% for course in courses %}
+        <div class="courses">
+            <img src="{{ course.image_url| safe }}" height="100%" alt="ai-for-teaching-course-image" />
+            <h3>{{ course.name }}</h3>
+            <p>{{ course.description }}</p>
+            <a href="{{ course.url| safe }}" target=”_blank” ><button class='button'>View</button></a>
+        </div>
+        {% endfor %}
+    {% endif %}
     {% else %}
-    <div>
+    </div>
+    <div style="text-align: center;">
         <i class='bx bx-lock-alt bx-lg'></i>
         <h3><em>You need to be logged in to access courses</em></h3>
     </div>

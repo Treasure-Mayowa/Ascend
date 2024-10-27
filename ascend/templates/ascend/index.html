@@ -29,25 +29,17 @@
         <img src="{% static "ascend/Teachers.webp" %}" alt="Image of a teacher teaching class" />
     </div>
     <div class="left">
-        <h2>Empowering Teachers</h2>
-        <p style="font-size: x-large; line-height: 1.5;"><em>Ascend</em> equips teachers with the 
-            knowledge and skills needed to improve 
-            learning outcomes, helping them 
-            ascend in their careers.</p>
-        <a href="{% url "register" %}"><button class="button">Get Started</button></a>
+        <h2>Teach Better, Stress Less</h2>
+            <p style="font-size: larger; line-height: 1.5;">
+                <em>Ascend</em> empowers educators with upskilling courses, curated resources, and AI-powered tools, designed to simplify your workload and enhance your teaching effectiveness.
+            </p>
+        <a href="{% url "register" %}"><button class="button">Get Started Free</button></a>
         <a href="{% url "login" %}" style="padding: 15px; font-size: large;">Log In</a>
     </div>
 </section>
 <section class="main green">
     <p style="text-align: center; font-size: x-large;">Level Up Your <span class="fancy">Teaching</span> and Improve <span class="fancy">Learning Outcomes</span></p>
     <div class="activities">
-        <a href="#">
-            <div class="features">
-                <i class='bx bxs-book-open bx-lg'></i>
-                <h3>Teacher Training</h3>
-                <p>Elevate your teaching with curated content.</p>
-            </div>
-        </a>
         <a href="#">
             <div class="features">
                 <i class='bx bxs-receipt bx-lg'></i>
@@ -59,20 +51,49 @@
             <div class="features">
                 <i class='bx bxs-pen bx-lg'></i>
                 <h3>Tools</h3>
-                <p>Empower your teaching journey with tools.</p>
+                <p>Leverage AI powered tools to improve your workflow.</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="features">
+                <i class='bx bxs-video bx-lg'></i>
+                <h3>Courses</h3>
+                <p>Upskill with free, curated courses designed for teachers.</p>
             </div>
         </a>
     </div>
 </section>
-<section class="main featured">
-    <h3>Featured Course</h3>
-    <img src="{% static "ascend/ai-course-thumbnail.webp" %}" alt="Ascend Logo" class="thumbnail" />
-    <h4>Using Artificial Intelligence in Teaching</h4>
-    <em>Certificate included</h4>
+<section class="main">
+    <h3 style="text-align: center; font-size: x-large;">How Ascend Works</h3>
+    <div class="activities">
+    <div class="step">
+        <i class="bx bxs-user-check bx-lg"></i>
+        <h4>Step 1</h4>
+        <p>Sign Up for Free – Access resources and tools right away.</p>
+    </div>
+    <div class="step">
+        <i class="bx bxs-folder bx-lg"></i>
+        <h4>Step 2</h4>
+        <p>Choose Your Path – Select resources and tools suited to your needs.</p>
+    </div>
+    <div class="step">
+        <i class="bx bxs-award bx-lg"></i>
+        <h4>Step 3</h4>
+        <p>Teach with Impact – Implement new skills & tools to enhance learning.</p>
+    </div>
+    </div>
 </section>
 <section class="main green cta">
-    <p style="font-size: x-large;">Elevate Teaching Excellence. Transform Learning Futures.</p>
+    <p style="font-size: x-large;">Simplify Teaching Tasks With AI-powered Tools and More.</p>
+    <img src="{% static "ascend/Tools-Ascend.webp" %}" alt="Ascend Tools Interface" class="thumbnail" />
+    <br/>
     <a href="{% url "register" %}"><button class="button" style="text-align: center;">Get Started</button></a>
+</section>
+<section class="main featured">
+    <h3>Featured Course</h3>
+    <img src="{% static "ascend/ai-course-thumbnail.webp" %}" alt="Ascend AI Course" class="thumbnail" />
+    <h4>Using Artificial Intelligence in Teaching</h4>
+    <em>Certificate included</h4>
 </section>
 {% endif %}
 {% endblock body %}
