@@ -29,3 +29,13 @@ class Resources(models.Model):
     description = models.TextField()
     url = models.URLField()
     
+class Courses(models.Model):
+    image_url = models.URLField()
+    source = models.TextField()
+    name = models.TextField()
+    description = models.TextField()
+    url = models.URLField()
+    topic = models.TextField(null=True)
+
+    def __str__(self):
+        return f"{self.name} from {self.source}"        

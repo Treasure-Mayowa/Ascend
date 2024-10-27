@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(User)
 admin.site.register(YoutubeContent)
 admin.site.register(Resources)
+admin.site.register(Courses)

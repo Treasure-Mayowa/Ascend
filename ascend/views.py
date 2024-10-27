@@ -21,7 +21,9 @@ def about(request):
     return render(request, 'ascend/about.html')
 
 def courses(request):
-    return render(request, "ascend/courses.html")
+    courses = Courses.objects.all()
+    return render(request, "ascend/courses.html", {
+        "courses": courses })
 
 def tools(request):
     return render(request, "ascend/tools.html")
@@ -139,10 +141,9 @@ def ascend_chat(request, message):
 
     stream = False
 
-    url = "https://chat.tune.app/api/chat/completions"
+    url = "https://openrouter.ai/api/v1/chat/completions"
     headers = {
-        "Authorization": api_key,
-        "Content-Type": "application/json"
+        "Authorization": f"Bearer {api_key}"
     }
 
     if len(MESSAGE) > 20 and len(ASSISTANT) > 20:
@@ -154,7 +155,7 @@ def ascend_chat(request, message):
                     "content": f"Respond to this message and do not put any preface text in your response. If the message is not related to teachers or teaching, simply respond with, 'Invalid question. I am designed to assist teachers only': {message}"
                 })
     data = {
-        "temperature": 0.7,
+        "temperature": 1.7,
         "messages": [
             {
                 "role": "system",
@@ -166,11 +167,10 @@ def ascend_chat(request, message):
                     "content": f"Respond to this message and do not put any preface text in your response and simplify for easy comprehension: {message}"
                 }
             ],
-            "model": "mixtral-8x7b-inst-v0-1-32k",
-            "stream": stream,
-            "max_tokens": 1000
+            "model": "meta-llama/llama-3.2-3b-instruct:free",
+            "stream": stream
         }
-    response = requests.post(url, headers=headers, json=data)
+    response = requests.post(URL, headers=HEADERS, data=json.dumps(data))
     if stream:
         for line in response.iter_lines():
             if line:
